@@ -9,9 +9,11 @@ https://www.coursera.org/learn/machine-learning/home/welcome
 
 Possible avenues of further development: 
 1) normalize features
-2) draw learning curves
-3) automate choice of lambda with an optimization algorithm
-4) experiment with neural networks of different size. 
-5) modify from train/CV approach to a n-fold approach to selecting hyperparameters
+2) feature engineering (bring some of the text variables back in, classify titles, cabin/deck numbers; categorize embarkment, family size); 
+3) treat missing values more effectively (particularly age)
+4) automate choice of lambda with an optimization algorithm
+5) experiment with neural networks of different size & structure. 
+6) modify from train/CV approach to a n-fold approach to selecting hyperparameters
+7) draw learning curves
 
 
