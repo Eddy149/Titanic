@@ -137,7 +137,7 @@ initial_nn_params = [initial_theta1(:) ; initial_theta2(:); initial_theta3(:)];
 
 lambdaNN = .001 ;
 
-
+%% ============= Part 7: Train Neural Network =============
 %now let's do this!
 options = optimset('MaxIter', 300);
 costFn = @(p) nnCostFunction(p,input_layer_size,hidden_layer1_size,hidden_layer2_size, ...
@@ -164,7 +164,7 @@ t = ((input_layer_size+1)*hidden_layer1_size) + ((hidden_layer1_size+1)*hidden_l
 Theta3 = reshape(nn_params((1 + t):end), ...
                  output_layer_size, (hidden_layer2_size + 1));
 
-
+%% ============= Part 8: Predict in CV set and test set =============
 %predict & check accuracy with a given threshold (0.5)
 y_hatNN = predict_titanicNN(X,Theta1,Theta2,Theta3);
 y_hatNN_cv = predict_titanicNN(X_cv,Theta1,Theta2,Theta3);
@@ -179,9 +179,4 @@ y_hat_test = predict_titanicNN(X_test,Theta1,Theta2,Theta3);
 y_hat_test = y_hat_test>threshold;
 
 csvwrite("submission_NN.csv", [data_test(:,1) y_hat_test]);
-
-
-
-%optimize accuracy using CV set. 
-%optimize choice of lambda
 
